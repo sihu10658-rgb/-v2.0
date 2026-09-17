@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>나만의 자바스크립트 계산기</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; background: #f0f2f5; }
+    .calculator { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 260px; }
+    #display { width: 100%; height: 50px; font-size: 24px; text-align: right; margin-bottom: 15px; padding: 5px; box-sizing: border-box; }
+    .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    button { height: 50px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; background: #e0e0e0; }
+    button:hover { background: #d0d0d0; }
+    button.op { background: #ff9500; color: white; }
+    button.op:hover { background: #e08500; }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="display" readonly value="0">
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendValue('/')" class="op">÷</button>
+      <button onclick="appendValue('*')" class="op">×</button>
+      <button onclick="appendValue('-')" class="op">-</button>
+
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('+')" class="op">+</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="calculate()" class="op" style="grid-row: span 2; height: 110px;">=</button>
+
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+
+      <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+      <button onclick="appendValue('.')">.</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
